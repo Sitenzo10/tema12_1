@@ -1,24 +1,39 @@
 @startuml
 
+rectangle {
+      usecase "Mostrar Menú" as menu
+      usecase "Pedir Comida" as pedido
+
+    }
+    actor Restaurante
+    actor Cliente
+    Restaurante -- menu
+    Cliente -- menu
+    Cliente - pedido
+    Restaurante -- (entregar comida)
 @enduml
 
-'https://plantuml.com/use-case-diagram
+@startuml
+left to right direction
+Cliente -- (confirmar pedido)
+Cliente -- (cancelar pedido)
+(devolver cambio) as devolucion
+devolucion .(cancelar pedido) :<<include>>
+(confirmar pedido) . devolucion :<<include>>
+@enduml
 
-:Main Admin: as Admin
-(Use the application) as (Use)
+@startuml
+left to right direction
+(acceder)<|.. (registrarse) : <<extend>>
+@enduml
 
-User -> (Start)
-User --> (Use)
+@startuml
+(pagar) <|-- (pagar con tarjeta)
+(pagar en efectivo)--|> (pagar)
 
-Admin ---> (Use)
+left to right direction
+Cliente <|- Cliente_Vip
+Cliente -- (reservar vuelo)
+Cliente_Vip -- (elige asiento)
+@enduml
 
-note right of Admin : This is an example.
-
-note right of (Use)
-A note can also
-be on several lines
-end note
-
-note "This note is connected\nto several objects." as N2
-(Start) .. N2
-N2 .. (Use)
