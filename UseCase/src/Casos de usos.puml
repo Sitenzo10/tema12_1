@@ -47,3 +47,14 @@ Cliente -- (cancelar)
 (pedir producto)..|>(devolver dinero) : <<include>>
 @enduml
 
+@startuml
+left to right direction
+newActor -- (identificarse)
+newActor -- (pagar)
+newActor -- (elegir mensajero)
+newActor -- (confirmar)
+(pagar) <|--(pagar con tarjeta)
+(pagar) <|-- (pagar con transferencia)
+(identificarse)<.. (registrarse): <<extend>>
+@enduml
+
