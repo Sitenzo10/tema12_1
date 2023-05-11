@@ -37,3 +37,13 @@ Cliente -- (reservar vuelo)
 Cliente_Vip -- (elige asiento)
 @enduml
 
+@startuml
+left to right direction
+Cliente -- (meter dinero)
+Cliente -- (pedir azucar)
+Cliente -- (pedir producto)
+Cliente -- (cancelar)
+(cancelar)..|>(devolver dinero):<<include>>
+(pedir producto)..|>(devolver dinero) : <<include>>
+@enduml
+
