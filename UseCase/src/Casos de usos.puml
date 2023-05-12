@@ -58,3 +58,14 @@ newActor -- (confirmar)
 (identificarse)<.. (registrarse): <<extend>>
 @enduml
 
+@startuml
+left to right direction
+Usuario -- (iniciar sesion)
+Usuario -- (recuperar contraseña)
+Usuario -- (modificar contraseña)
+Usuario -- (cerrar sesion)
+Administrador -- (registro de usuario)
+Administrador -- (instalar programa)
+Administrador -|> Usuario
+@enduml
+
