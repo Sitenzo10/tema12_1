@@ -75,3 +75,17 @@ Extranjero- (Tomar huellas)
 Extranjero --|> Ciudadano
 (Tomar huellas)..> (registrar entrada): <<extend>>
 @enduml
+
+@startuml
+usecase UC1 as "sacar dinero
+--
++ solicitud"
+
+note "desciption\ncondicion\n{historia sospechosa}\npunto de extension:\n solicitud hecha" as n1
+
+usecase UC2 as "retener tarjeta"
+UC1-UC2:  <<extend>>
+UC1 .. n1
+UC2 .. n1
+@enduml
+
