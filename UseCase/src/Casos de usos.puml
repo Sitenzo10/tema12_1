@@ -69,3 +69,9 @@ Administrador -- (instalar programa)
 Administrador -|> Usuario
 @enduml
 
+@startuml
+Ciudadano - (registrar entrada)
+Extranjero- (Tomar huellas)
+Extranjero --|> Ciudadano
+(Tomar huellas)..> (registrar entrada): <<extend>>
+@enduml
